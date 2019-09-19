@@ -11,12 +11,12 @@ const REPO_ROOT = path.join(__dirname, "../");
 helpers.packageESM({
   repoRoot: REPO_ROOT,
   esmSource: "out/esm",
-  esmDestination: "release/esm",
+  esmDestination: "lib/esm",
   entryPoints: ["monaco.contribution.js", "yamlMode.js", "yaml.worker.js"],
   resolveAlias: {
     "vscode-nls": path.join(REPO_ROOT, "out/esm/fillers/vscode-nls.js")
   },
-  resolveSkip: ["monaco-editor-core", "js-yaml"],
+  resolveSkip: ["monaco-editor", "monaco-editor-core", "js-yaml"],
   destinationFolderSimplification: {
     node_modules: "_deps",
     "jsonc-parser/lib/esm": "jsonc-parser",
